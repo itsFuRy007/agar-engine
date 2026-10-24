@@ -1,27 +1,50 @@
 # Agar Engine
 
-A Python project exploring Agar.io-related bot infrastructure, WebSocket communication, and game protocol analysis.
+A network protocol research project exploring client-server communication, WebSockets, binary packet handling, and reverse engineering.
 
-I started this project to understand how these systems work under the hood. I've worked on the local API, bot management logic, packet handling, and protocol utilities. I also used Ghidra to inspect compiled code and investigate parts of the communication flow.
+The goal of this project is to investigate how networked game systems communicate, understand the structure of protocol messages, and experiment with the components involved in client-server interactions.
 
-## What I've Been Working On
+## Areas of Research
 
-- **API Development:** Built a local API using FastAPI.
-- **Bot Management:** Implemented bot state and lifecycle management, with unit tests.
-- **WebSocket Client:** Developed the foundation for secure WebSocket communication.
-- **Protocol Research:** Experimented with packet construction, XOR operations, and LZ4 decompression.
-- **Reverse Engineering:** Used Ghidra to inspect compiled binaries and trace selected functions.
-- **Testing:** Added unit tests for bot management and protocol utilities.
+### Network Communication
+- Explored secure WebSocket client implementation.
+- Examined the structure of client-server communication.
+- Built a local API to manage bot-related operations.
 
-## Tech Stack
+### Protocol Analysis
+- Experimented with binary packet construction.
+- Implemented experimental XOR and LZ4 processing utilities.
+- Wrote tests to validate selected protocol-helper behavior.
 
-Python, FastAPI, Pydantic, Uvicorn, WebSockets, LZ4, Ghidra, Git, and GitHub.
+### Reverse Engineering
+- Used Ghidra to inspect compiled binaries and trace selected functions.
+- Investigated HTTP request construction and response handling.
+- Examined communication flows to better understand how software components interact.
+
+### Development and Testing
+- Implemented bot lifecycle and state management.
+- Built a local API using FastAPI.
+- Added unit tests for bot-management logic and protocol utilities.
+
+## Technologies and Tools
+
+- **Networking:** WebSockets, HTTP, client-server architecture
+- **Programming:** Python
+- **Frameworks:** FastAPI, Pydantic, Uvicorn
+- **Data Processing:** Binary packet handling, XOR, LZ4
+- **Reverse Engineering:** Ghidra
+- **Testing:** Python unittest
+- **Version Control:** Git and GitHub
 
 ## Current Status
 
-This project is a work in progress. The local API, bot management logic, and experimental protocol utilities are implemented, with tests covering selected functionality.
+This project is an ongoing research prototype.
 
-A connection to live Agar.io game servers and functional in-game bot behavior have not been implemented or verified. Compatibility with the current game protocol is also unconfirmed.
+The local API, bot-management components, WebSocket client foundation, and experimental protocol utilities have been implemented to varying degrees.
+
+Live connectivity to Agar.io game servers has not been implemented or verified. Compatibility between the experimental protocol utilities and the current production game protocol remains unconfirmed.
+
+The existing tests cover selected local management and protocol-helper functionality; they do not establish compatibility with live servers.
 
 ## Getting Started
 
@@ -47,16 +70,14 @@ Create a virtual environment and install dependencies:
 
     uvicorn server:app --host 127.0.0.1 --port 8000
 
+The API listens on localhost.
+
 ### Run Tests
 
     python -m unittest discover -s tests -v
 
-## Reverse Engineering Notes
-
-Ghidra was used to inspect compiled code, trace function calls, and investigate selected HTTP request and response routines.
-
 ## Disclaimer
 
-This is an independent research and learning project. It is not affiliated with or endorsed by Agar.io or its operators.
+This is an independent research project and is not affiliated with or endorsed by Agar.io or its operators.
 
-Use these techniques responsibly and only on systems you are authorized to investigate.
+All research and testing should be conducted responsibly and within the scope of authorized systems.
